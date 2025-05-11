@@ -3,7 +3,7 @@ from magicbot import MagicRobot
 
 class MagicCommandRobot(MagicRobot):
 
-    def robotPeriodic(self):
+    def robotPeriodic(self) -> None:
         commands2.CommandScheduler.getInstance().run()
         return super().robotPeriodic()
 

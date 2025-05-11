@@ -2,41 +2,42 @@ import wpilib
 import commands2
 from base.magiccommandbot import MagicCommandRobot
 
+
 # Component example (for magicbot)
 class ExampleComponent:
-    def execute(self):
+    def execute(self) -> None:
         # print('Magic component executing')
         ...
 
 
 # Command2 subsystem example
 class ExampleSubsystem(commands2.SubsystemBase):
-    def __init__(self):
+    def __init__(self) -> None:
         # Initialize hardware
         self.setDefaultCommand(ExampleCommand(self))
         ...
 
-    def periodic(self):
+    def periodic(self) -> None:
         # print('Command2 subsystem periodic running')
         ...
 
 
 class ExampleCommand(commands2.Command):
 
-    def __init__(self, subsystem: ExampleSubsystem):
+    def __init__(self, subsystem: ExampleSubsystem) -> None:
         super().__init__()
         self.addRequirements(subsystem)
         ...
 
-    def initialize(self):
+    def initialize(self) -> None:
         print('Default command initialized')
         ...
 
-    def execute(self):
+    def execute(self) -> None:
         print('Default command executing')
         ...
 
-    def end(self, interrupted: bool):
+    def end(self, interrupted: bool) -> None:
         print('Default command ended')
         ...
 
@@ -52,10 +53,10 @@ class MyRobot(MagicCommandRobot):
         self.joystick = wpilib.Joystick(0)
         self.example_subsystem = ExampleSubsystem()
 
-    def teleopInit(self):
+    def teleopInit(self) -> None:
         ...
 
-    def teleopPeriodic(self):
+    def teleopPeriodic(self) -> None:
         # Example of binding a button to a command
         if self.joystick.getRawButton(2):
             # This will halt the default command on our example subsystem
