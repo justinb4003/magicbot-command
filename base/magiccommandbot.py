@@ -2,8 +2,6 @@ import commands2
 from magicbot import MagicRobot
 
 class MagicCommandRobot(MagicRobot):
-    import commands2
-
 
     def robotPeriodic(self):
         commands2.CommandScheduler.getInstance().run()
