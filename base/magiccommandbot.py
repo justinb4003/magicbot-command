@@ -6,7 +6,6 @@ class MagicCommandRobot(MagicRobot):
 
     def robotInit(self) -> None:
         super().robotInit()
-        self.registerSubsystems()
 
     def createSubsystems(self) -> None:
         raise NotImplementedError(

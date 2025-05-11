@@ -48,13 +48,9 @@ class MyRobot(MagicCommandRobot):
     # Define components for magicbot
     example: ExampleComponent
 
-    def createSubsystems(self) -> None:
-        # Create our subsystems; they will register with the scheduler
-        # automatically
-        self.example_subsystem = ExampleSubsystem()
-
     def createObjects(self) -> None:
         self.joystick = wpilib.Joystick(0)
+        self.example_subsystem = ExampleSubsystem()
 
     def teleopInit(self):
         ...
