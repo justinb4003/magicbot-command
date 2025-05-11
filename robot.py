@@ -1,6 +1,6 @@
 import wpilib
 import commands2
-from utilities.magiccomponent import MagicCommandRobot
+from base.magiccommandbot import MagicCommandRobot
 
 # Component example (for magicbot)
 class ExampleComponent:
